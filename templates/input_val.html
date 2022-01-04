@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}Ввод данных{% endblock %}
+
+{% block content %}
+<h1>Ввод данных</h1>
+
+<h3>Некоторые результаты экстрасенсов</h3>
+
+<table>
+    <thead>
+        <tr>
+            <th>Экстрасенс</th>
+            <th>Предсказание</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for key, val in exp_resp.items() %}
+        <tr>
+            <td>{{ key }}</td>
+            <td>{{ val }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<h3 class="important">Введите загаданное число</h3>
+<form method="post">
+    <p><input type=text name=myvalue>
+    <p><input type=submit value="Отправить">
+</form>
+{% endblock %}

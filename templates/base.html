@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+<!--    <link rel="stylesheet" href="style.css" /> -->
+    <style type="text/css">
+        .important { color: #DD6633; }
+        table {
+            border-collapse: collapse;
+            border: 1px solid #cccccc;
+        }
+        td, th {
+            text-align: center;
+            border: 1px solid #cccccc;
+            padding: 1px 8px;
+        }
+        thead>tr:nth-child(odd) {
+            background: #cccccc;
+        }
+        tbody>tr:nth-child(odd) {
+            background: #f0f0f0;
+        }
+    </style>
+    <title>{% block title %}{% endblock %}</title>
+    {% endblock %}
+</head>
+<body>
+    <div id="content">{% block content %}{% endblock %}</div>
+    <div id="footer">
+        {% block footer %}{% endblock %}
+    </div>
+</body>
+</html>

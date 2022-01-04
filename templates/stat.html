@@ -1,0 +1,26 @@
+<h1>Статистика</h1>
+
+
+<table>
+    <thead>
+        <tr>
+            <th colspan="2">Загаданные числа</th>
+            <th>{{ myvals }}</th>
+        </tr>
+        <tr><th colspan="3">&nbsp;</th></tr>
+        <tr>
+            <th>Экстрасенс</th>
+            <th>Достоверность</th>
+            <th>История догадок</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for key, val in ext_accuracy.items() %}
+        <tr>
+            <td>{{ key }}</td>
+            <td>{{ val }}</td>
+            <td>{{ ext_vals.get(key, [])[:vals_count] }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>

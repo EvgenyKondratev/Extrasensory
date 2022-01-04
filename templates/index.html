@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Тестирование экстрасенсов{% endblock %}
+
+{% block content %}
+    <h1>Тестирование экстрасенсов</h1>
+    <h3 class="important">Загадайте двухзначное число.</h3>
+    <form method="post">
+        <p><input type=submit value="Я загадал!">
+    </form>
+{% endblock %}
+
+{% block footer %}
+    {% include 'stat.html' %}
+{% endblock %}

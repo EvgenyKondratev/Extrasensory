@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}Результаты тестирования{% endblock %}
+
+{% block content %}
+    <h1>Результаты тестирования</h1>
+    <a href="{{ url_for('index') }}"> Попробовать снова </a>
+{% endblock %}
+
+{% block footer %}
+    {% include 'stat.html' %}
+{% endblock %}
