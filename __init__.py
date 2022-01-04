@@ -1,5 +1,6 @@
 from flask import Flask, session
 from flask_session import Session
+import redis
 
 app = Flask(__name__)
 
@@ -18,7 +19,12 @@ def set():
 
 @app.route('/get/')
 def get():
-    return session.get('key', 'not set')
+    r = redis.Redis(host='localhost', port=6379, db=0)
+    s = ''
+    for key in r.scan_iter():
+        s += f'{key}: {r.get(key)}<br/>'
+        print(key, r.get(key))
+    return s if s != '' else 'not set' #session.get('key', 'not set')
 
 if __name__ == '__main__':
     app.run()
