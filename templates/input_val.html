@@ -24,9 +24,10 @@
     </tbody>
 </table>
 
-<h3 class="important">Введите загаданное число</h3>
-<form method="post">
-    <p><input type=text name=myvalue>
-    <p><input type=submit value="Отправить">
+<h3 class="important">Введите загаданное двухзначное число.</h3>
+<form method="post" action="">
+    {{ form.csrf_token() }}
+    <p>{{ form.myvalue }}</p>
+    <p>{{ form.submit() }}</p>
 </form>
 {% endblock %}
