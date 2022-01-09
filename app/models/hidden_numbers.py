@@ -1,11 +1,11 @@
 import pickle
-from typing import Optional
+from typing import Optional, List
 from flask import session
 
 
 class HiddenNumbers:
-    def __init__(self, numbers: list[int]):
-        self.numbers: list[int] = numbers
+    def __init__(self, numbers: List[int]):
+        self.numbers: List[int] = numbers
 
     def save(self) -> None:
         pickled_data = pickle.dumps({'numbers': self.numbers})

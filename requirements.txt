@@ -1,5 +1,5 @@
 ﻿Flask==2.0.1
-Flask-Session
-redis==4.1.0
+Flask-Session==0.4.0
 Flask-WTF==1.0.0
 WTForms==3.0.1
+redis==4.1.0

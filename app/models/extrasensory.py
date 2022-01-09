@@ -1,15 +1,15 @@
 ﻿import random
 import pickle
-from typing import Optional
+from typing import Optional, List
 from main_app import app
 from flask import session
 
 
 class Extrasensory:
-    def __init__(self, name: str, accuracy: int, predictions: list[int]):
+    def __init__(self, name: str, accuracy: int, predictions: List[int]):
         self.name: str = name
         self.accuracy: int = accuracy
-        self.predictions: list[int] = predictions
+        self.predictions: List[int] = predictions
 
     def __repr__(self) -> str:
         return f'Экстрасенс {self.name}'
