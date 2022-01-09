@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}Загадать число{% endblock %}
+
+{% block content %}
+
+<h3 class="important">Введите загаданное двухзначное число.</h3>
+<form method="post" action="">
+    {{ form.csrf_token() }}
+    <p>{{ form.hidden_number }}</p>
+    <p>{{ form.submit() }}</p>
+</form>
+
+<h1>Дагадки экстрасенсов</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Экстрасенс</th>
+            <th>Предсказание</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for ext in extrasensories %}
+        <tr>
+            <td>{{ ext.name }}</td>
+            <td>{{ ext.predictions[-1] }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
