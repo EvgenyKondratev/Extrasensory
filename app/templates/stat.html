@@ -1,10 +1,11 @@
+{% if hidden_numbers %}
 <h1>Статистика</h1>
 
 <table>
     <thead>
         <tr>
             <th colspan="2">Загаданные числа</th>
-            <th>{{ myvals }}</th>
+            <th>{{ hidden_numbers.numbers }}</th>
         </tr>
         <tr><th colspan="3">&nbsp;</th></tr>
         <tr>
@@ -14,12 +15,13 @@
         </tr>
     </thead>
     <tbody>
-    {% for key, val in ext_accuracy.items() %}
+    {% for ext in extrasensories %}
         <tr>
-            <td>{{ key }}</td>
-            <td>{{ val }}</td>
-            <td>{{ ext_vals.get(key, [])[:vals_count] }}</td>
+            <td>{{ ext.name }}</td>
+            <td>{{ ext.accuracy }}</td>
+            <td>{{ ext.predictions }}</td>
         </tr>
     {% endfor %}
     </tbody>
 </table>
+{% endif %}
