@@ -23,7 +23,7 @@ class Extrasensory:
         if number == self.predictions[-1]:
             self.accuracy += 1
         else:
-            self.accuracy -= (1 if self.accuracy > 0 else 0)
+            self.accuracy -= 1
 
     def save(self) -> None:
         pickled_data = pickle.dumps({'name': self.name, 'accuracy': self.accuracy, 'predictions': self.predictions})
